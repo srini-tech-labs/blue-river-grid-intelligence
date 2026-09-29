@@ -1,0 +1,15 @@
+# Blue River Grid Intelligence — Databricks App runtime config.
+# No secrets or identifiers here: resource values are injected via valueFrom.
+command:
+  - uvicorn
+  - backend.main:app
+  - --host
+  - 0.0.0.0
+  - --port
+  - "8000"
+
+env:
+  - name: DATABRICKS_WAREHOUSE_ID
+    valueFrom: sql-warehouse
+  - name: DATABRICKS_AI_SEARCH_INDEX
+    valueFrom: vector-search-index

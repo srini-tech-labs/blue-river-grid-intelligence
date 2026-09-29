@@ -1,0 +1,43 @@
+{
+  "application_name": "Blue River Grid Intelligence",
+  "project": "Blue River Power \u2014 Utility Grid Reliability & AI Intelligence Platform",
+  "release": "stage4-v1.2",
+  "status": "PASS",
+  "accepted_on": "2026-09-28",
+  "built_on": {
+    "stage3_release": "stage3-v1",
+    "stage3_architecture": "hybrid-rag-v1"
+  },
+  "runtime": {
+    "platform": "Databricks Apps",
+    "app_name": "blue-river-grid-intelligence",
+    "frontend": "React + TypeScript (Vite), served by FastAPI same-origin",
+    "backend": "FastAPI (Python 3.11), Databricks SDK unified auth",
+    "auth": "Databricks App authorization / dedicated service principal",
+    "resources": {
+      "sql-warehouse": "existing serverless SQL warehouse (CAN USE)",
+      "vector-search-index": "workspace.brp_knowledge.utility_knowledge_index (SELECT)"
+    },
+    "model_api": "system.ai.gpt-oss-20b via ai_query",
+    "custom_model_serving_endpoint": false,
+    "new_vector_index": false
+  },
+  "validation": {
+    "deployed_acceptance_as_app_sp": "25/25",
+    "stage3_retrieval_regression": "4/4",
+    "backend_unit_tests": 24,
+    "frontend_tests": 8,
+    "hands_on_ui_acceptance": "approved",
+    "automated_leak_detection": "tests, build, deploy staging, live smoke"
+  },
+  "patch_of": "stage4-v1.1",
+  "security": {
+    "internal_storage_paths_exposed": false,
+    "source_uri_in_api_or_prompt": false
+  },
+  "modules": [
+    "Command Center",
+    "Asset 360",
+    "Operations Intelligence"
+  ]
+}

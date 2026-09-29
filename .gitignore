@@ -1,0 +1,26 @@
+# secrets / local config
+.env
+.env.*
+!.env.example
+.databrickscfg
+
+# python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+
+# frontend
+node_modules/
+frontend/dist/
+*.tsbuildinfo
+backend/static/
+
+# deploy staging / local artifacts
+.deploy/
+.discovery/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
